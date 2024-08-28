@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
 import user from "../assets/user.png";
 
 export function Message() {
   return (
     <>
-      <div className="flex justify-between items-center bg-card rounded-2xl px-4 py-3 mb-3">
+      <Link
+        to={"/chat"}
+        className="flex justify-between items-center bg-card rounded-2xl px-4 py-3 mb-3"
+      >
         <div className="flex items-center">
           <img
             className="w-16 h-16 rounded-full mr-5"
@@ -21,7 +25,7 @@ export function Message() {
             2
           </div>
         </div>
-      </div>
+      </Link>
 
       <div className="flex justify-between items-center bg-card rounded-2xl px-4 py-3">
         <div className="flex items-center">
