@@ -1,3 +1,5 @@
+import { Login } from "./components/Auth/Login";
+
 export function App() {
-  return <h1 className="">Hello</h1>;
+  return <Login />;
 }

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors:{
+        primary: "#1DA1F2"
+      },
       fontFamily: {
         openSans: ["Open Sans"],
         roboto: ["Roboto"]
