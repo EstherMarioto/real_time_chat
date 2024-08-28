@@ -6,7 +6,7 @@ export function Message() {
     <>
       <Link
         to={"/chat"}
-        className="flex justify-between items-center bg-card rounded-2xl px-4 py-3 mb-3"
+        className="flex justify-between items-center bg-secondary rounded-2xl px-4 py-3 mb-3"
       >
         <div className="flex items-center">
           <img

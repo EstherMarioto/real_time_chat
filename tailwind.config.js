@@ -8,7 +8,7 @@ export default {
     extend: {
       colors:{
         primary: "#1DA1F2",
-        card: "#F1F1F1CC",
+        secondary: "#F1F1F1",
         notification: "#F22A1D"
       },
       fontFamily: {
