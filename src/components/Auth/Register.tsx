@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Register() {
   return (
     <div className="flex flex-col items-center mt-28">
@@ -32,7 +34,10 @@ export function Register() {
         </button>
       </form>
       <h6 className="mt-8 text-sm text-gray-400">
-        Você tem uma conta? <span className="text-primary">Conecte-se</span>
+        Você tem uma conta?
+        <Link to={"/login"} className="text-primary">
+          Conecte-se
+        </Link>
       </h6>
     </div>
   );
