@@ -9,7 +9,8 @@ export default {
       colors:{
         primary: "#1DA1F2",
         secondary: "#F1F1F1",
-        notification: "#F22A1D"
+        notification: "#F22A1D",
+        message: "#000000B2"
       },
       fontFamily: {
         openSans: ["Open Sans"],

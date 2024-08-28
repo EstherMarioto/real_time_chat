@@ -27,7 +27,7 @@ export function Message() {
         </div>
       </Link>
 
-      <div className="flex justify-between items-center bg-card rounded-2xl px-4 py-3">
+      <div className="flex justify-between items-center bg-secondary rounded-2xl px-4 py-3">
         <div className="flex items-center">
           <img
             className="w-16 h-16 rounded-full mr-5"

@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Register } from "./components/Auth/Register.tsx";
 import { Login } from "./components/Auth/Login.tsx";
 import { Chat } from "./components/Chat/Chat.tsx";
+import { Home } from "./components/Home.tsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
   },
   {
     path: "/chat",
