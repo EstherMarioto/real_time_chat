@@ -1,6 +1,6 @@
 import { Login } from "./components/Auth/Login";
-import { Register } from "./components/Auth/Register";
+import { Home } from "./components/Home";
 
 export function App() {
-  return <Login />;
+  return <Home />;
 }

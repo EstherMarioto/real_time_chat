@@ -28,7 +28,7 @@ export function Login() {
         </button>
       </form>
       <h6 className="mt-8 text-sm text-gray-400">
-        Não tem uma conta?{" "}
+        Não tem uma conta?
         <Link to={"/register"} className="text-primary">
           Inscrever-se
         </Link>

@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Register } from "./components/Auth/Register.tsx";
 import { Login } from "./components/Auth/Login.tsx";
+import { Chat } from "./components/Chat/Chat.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/chat",
+    element: <Chat />,
   },
 ]);
 createRoot(document.getElementById("root")!).render(

@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       colors:{
-        primary: "#1DA1F2"
+        primary: "#1DA1F2",
+        card: "#F1F1F1CC",
+        notification: "#F22A1D"
       },
       fontFamily: {
         openSans: ["Open Sans"],
