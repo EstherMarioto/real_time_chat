@@ -1,0 +1,16 @@
+{
+    "translation":{
+        "title": "Real Time Chat",
+        "login": "Login",
+        "dontHaveAnAccount": "Don't have an account?",
+        "haveAnAccount": "Do you have an account?",
+        "signUp": "Sign Up",
+        "connect": "Connect",
+        "password": "Password",
+        "username": "Username",
+        "toEnter": "To enter",
+        "today": "Today",
+        "typeHere": "Type here..."
+
+    }
+}

@@ -1,38 +1,65 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export function Login() {
+  const {
+    t,
+    i18n: { changeLanguage },
+  } = useTranslation();
+
+  const handleChangeLanguage = (lang: string) => {
+    changeLanguage(lang);
+  };
+
   return (
-    <div className="flex flex-col items-center mt-28">
-      <h1 className="font-openSans font-black text-primary text-5xl mb-16">
-        Real Time Chat
-      </h1>
-      <h2 className="font-bold text-2xl mb-7">Faça Login</h2>
-      <form action="" method="post" className="w-1/4">
-        <input
-          type="email"
-          name="email"
-          className="border w-full rounded-full border-black py-3 px-5 mb-5"
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          name="password"
-          className="border w-full rounded-full border-black py-3 px-5 mb-12"
-          placeholder="Senha"
-        />
-        <button
-          type="submit"
-          className="bg-primary w-full rounded-full py-3 text-white font-semibold"
+    <>
+      <div className="flex justify-end gap-2 m-2 font-bold">
+        <h6
+          onClick={() => handleChangeLanguage("pt")}
+          className="hover:cursor-pointer"
         >
-          Entrar
-        </button>
-      </form>
-      <h6 className="mt-8 text-sm text-gray-400">
-        Não tem uma conta?
-        <Link to={"/register"} className="text-primary">
-          Inscrever-se
-        </Link>
-      </h6>
-    </div>
+          PT
+        </h6>
+        <h6
+          onClick={() => handleChangeLanguage("en")}
+          className="hover:cursor-pointer"
+        >
+          EN
+        </h6>
+      </div>
+
+      <div className="flex flex-col items-center mt-28">
+        <h1 className="font-openSans font-black text-primary text-5xl mb-16">
+          {t("title")}
+        </h1>
+        <h2 className="font-bold text-2xl mb-7">{t("login")}</h2>
+        <form action="" method="post" className="w-1/4">
+          <input
+            type="email"
+            name="email"
+            className="border w-full rounded-full border-black py-3 px-5 mb-5"
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            name="password"
+            className="border w-full rounded-full border-black py-3 px-5 mb-12"
+            placeholder={t("password")}
+          />
+          <button
+            type="submit"
+            className="bg-primary w-full rounded-full py-3 text-white font-semibold"
+          >
+            {t("toEnter")}
+          </button>
+        </form>
+        <h6 className="mt-8 text-sm text-gray-400">
+          {t("dontHaveAnAccount")}
+          <Link to={"/register"} className="text-primary ml-1">
+            {t("signUp")}
+          </Link>
+        </h6>
+      </div>
+    </>
   );
 }

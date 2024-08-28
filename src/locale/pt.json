@@ -1,0 +1,16 @@
+{
+    "translation":{
+        "title": "Bate-papo em tempo real",
+        "login": "Faça Login",
+        "dontHaveAnAccount": "Não tem uma conta?",
+        "haveAnAccount": "Você tem uma conta?",
+        "signUp": "Inscrever-se",
+        "connect": "Conecte-se",
+        "password": "Senha",
+        "username": "Nome de Usuário",
+        "toEnter": "Entrar",
+        "today": "Hoje",
+        "typeHere": "Digite aqui..."
+
+    }
+}

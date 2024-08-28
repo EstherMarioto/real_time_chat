@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { App } from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./lib/i18n.ts";
 import { Register } from "./components/Auth/Register.tsx";
 import { Login } from "./components/Auth/Login.tsx";
 import { Chat } from "./components/Chat/Chat.tsx";
