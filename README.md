@@ -16,7 +16,7 @@ Antes de começar, certifique-se de ter os seguintes softwares instalados em seu
 Clone o repositório para o seu ambiente local:
 
 ```bash
-git clone <URL_DO_REPOSITÓRIO>
+git clone https://github.com/EstherMarioto/real_time_chat.git
 ```
 ### 2. Configuração do Frontend
 
