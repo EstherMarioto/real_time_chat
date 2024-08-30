@@ -18,7 +18,7 @@ export function Footer({
     if (message) {
       SetMessageList((current: any) => [
         ...current,
-        { id: socket.id, text: message },
+        { userSent: socket.id, userReceived: socket.id, message: message },
       ]);
       clearInput();
     }

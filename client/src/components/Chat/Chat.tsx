@@ -13,7 +13,7 @@ export function Chat() {
   const [messageList, SetMessageList] = useState<any[]>([]);
   const messageRef = useRef<HTMLInputElement>(null);
 
-  const socket = io("http://localhost:3001/");
+  const socket = io("http://localhost:3002/");
 
   useEffect(() => {
     socket.on("receive_message", (data: any) => {
@@ -35,7 +35,7 @@ export function Chat() {
             <h6 className="text-sm text-message font-light">{t("today")}</h6>
           </div>
           {messageList.map((message, index) => (
-            <MessageReceived key={index} message={message.text} />
+            <MessageReceived key={index} message={message.message} />
           ))}
           <MessageSent />
         </div>

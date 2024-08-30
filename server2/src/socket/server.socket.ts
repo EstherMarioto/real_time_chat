@@ -22,6 +22,8 @@ export function Socket_server() {
       } catch (error) {
         console.error("Erro ao salvar a mensagem no Banco de Dados.", error);
       }
+
+      io.emit("received_message", data.message);
     });
 
     client.on("disconnect", () => {

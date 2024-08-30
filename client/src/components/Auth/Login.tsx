@@ -12,7 +12,7 @@ export function Login() {
           {t("title")}
         </h1>
         <h2 className="font-bold text-2xl mb-7">{t("login")}</h2>
-        <form action="" method="post" className="w-1/4">
+        <div className="w-1/4">
           <input
             type="email"
             name="email"
@@ -25,13 +25,15 @@ export function Login() {
             className="border w-full rounded-full border-black py-3 px-5 mb-12"
             placeholder={t("password")}
           />
-          <button
-            type="submit"
-            className="bg-primary w-full rounded-full py-3 text-white font-semibold"
-          >
-            {t("toEnter")}
-          </button>
-        </form>
+          <Link to={"/home"}>
+            <button
+              type="submit"
+              className="bg-primary w-full rounded-full py-3 text-white font-semibold"
+            >
+              {t("toEnter")}
+            </button>
+          </Link>
+        </div>
         <h6 className="mt-8 text-sm text-gray-400">
           {t("dontHaveAnAccount")}
           <Link to={"/register"} className="text-primary ml-1">
