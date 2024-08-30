@@ -4,14 +4,23 @@ import { Header } from "./Header";
 import { MessageReceived } from "./MessageReceived";
 import { MessageSent } from "./MessageSent";
 import { useEffect, useRef, useState } from "react";
-import { io } from "socket.io-client";
+import io from "socket.io-client";
+import { useChatSocket } from "../../hooks/useChatSocket";
 import { Locale } from "../Locale";
 
 export function Chat() {
   const { t } = useTranslation();
 
-  const [messageList, SetMessageList] = useState<any[]>([]);
+  type MessageType = {
+    message: string;
+    sender: string;
+    timestamp: Date;
+  };
+
+  const [messageList, SetMessageList] = useState<MessageType[]>([]);
   const messageRef = useRef<HTMLInputElement>(null);
+
+  useChatSocket(SetMessageList);
 
   const socket = io("http://localhost:3002/");
 

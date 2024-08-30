@@ -1,22 +1,22 @@
 import { PaperPlaneRight } from "phosphor-react";
+import { MutableRefObject } from "react";
 import { useTranslation } from "react-i18next";
+import { Socket } from "socket.io-client";
 
-export function Footer({
-  messageRef,
-  SetMessageList,
-  socket,
-}: {
-  messageRef: any;
-  SetMessageList: any;
-  socket: any;
-}) {
+type FooterProps = {
+  messageRef: MutableRefObject<HTMLInputElement | null>;
+  SetMessageList: React.Dispatch<React.SetStateAction<any[]>>;
+  socket: Socket;
+};
+
+export function Footer({ messageRef, SetMessageList, socket }: FooterProps) {
   const { t } = useTranslation();
 
   const handleSubmit = () => {
     const message = messageRef.current?.value;
 
     if (message) {
-      SetMessageList((current: any) => [
+      SetMessageList((current) => [
         ...current,
         { userSent: socket.id, userReceived: socket.id, message: message },
       ]);
@@ -32,7 +32,15 @@ export function Footer({
 
   return (
     <div className="fixed bottom-0 w-full">
-      <form action="" method="post" className="flex items-center bg-white p-6">
+      <form
+        action=""
+        method="post"
+        className="flex items-center bg-white p-6"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+      >
         <input
           type="text"
           name="message"
@@ -44,6 +52,7 @@ export function Footer({
           size={30}
           onClick={() => handleSubmit()}
           className="hover:cursor-pointer"
+          aria-label={t("send")}
         />
       </form>
     </div>

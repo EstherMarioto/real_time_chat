@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export function Header() {
   return (
     <div className="flex bg-white items-center pt-12 pb-5 px-5">
-      <Link to={"/home"}>
+      <Link to={"/home"} aria-label="Voltar para a página inicial">
         <CaretLeft size={30} />
       </Link>
       <img className="w-16 h-16 rounded-full mx-4" src={user} alt="Perfil" />

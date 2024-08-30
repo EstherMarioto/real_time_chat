@@ -7,9 +7,9 @@ export function Home() {
     <>
       <Locale />
       <Header />
-      <div className="px-5">
+      <main className="px-5">
         <Message />
-      </div>
+      </main>
     </>
   );
 }
