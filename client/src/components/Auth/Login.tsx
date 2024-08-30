@@ -1,45 +1,12 @@
-import { useRef } from "react";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { io } from "socket.io-client";
+import { Locale } from "../Locale";
+import { useTranslation } from "react-i18next";
 
 export function Login() {
-  const {
-    t,
-    i18n: { changeLanguage },
-  } = useTranslation();
-
-  const handleChangeLanguage = (lang: string) => {
-    changeLanguage(lang);
-  };
-
-  const usernameRef = useRef<HTMLInputElement>(null);
-
-  const handleSubmit = async () => {
-    const username = usernameRef.current?.value;
-
-    if (username) {
-      const socket = await io("http://localhost:3001/");
-      socket.emit("set_username", username);
-    }
-  };
+  const { t } = useTranslation();
   return (
     <>
-      <div className="flex justify-end gap-2 m-2 font-bold">
-        <h6
-          onClick={() => handleChangeLanguage("pt")}
-          className="hover:cursor-pointer"
-        >
-          PT
-        </h6>
-        <h6
-          onClick={() => handleChangeLanguage("en")}
-          className="hover:cursor-pointer"
-        >
-          EN
-        </h6>
-      </div>
-      <button onClick={() => handleSubmit()}>teste </button>
+      <Locale />
       <div className="flex flex-col items-center mt-28">
         <h1 className="font-openSans font-black text-primary text-5xl mb-16">
           {t("title")}
@@ -49,7 +16,6 @@ export function Login() {
           <input
             type="email"
             name="email"
-            ref={usernameRef}
             className="border w-full rounded-full border-black py-3 px-5 mb-5"
             placeholder="Email"
           />

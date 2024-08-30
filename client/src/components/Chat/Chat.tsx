@@ -5,6 +5,7 @@ import { MessageReceived } from "./MessageReceived";
 import { MessageSent } from "./MessageSent";
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
+import { Locale } from "../Locale";
 
 export function Chat() {
   const { t } = useTranslation();
@@ -25,22 +26,25 @@ export function Chat() {
   }, []);
 
   return (
-    <div className="bg-secondary h-screen">
-      <Header />
-      <div className="p-7">
-        <div className="flex justify-center mb-8">
-          <h6 className="text-sm text-message font-light">{t("today")}</h6>
+    <>
+      <Locale />
+      <div className="bg-secondary h-screen">
+        <Header />
+        <div className="p-7">
+          <div className="flex justify-center mb-8">
+            <h6 className="text-sm text-message font-light">{t("today")}</h6>
+          </div>
+          {messageList.map((message, index) => (
+            <MessageReceived key={index} message={message.text} />
+          ))}
+          <MessageSent />
         </div>
-        {messageList.map((message, index) => (
-          <MessageReceived key={index} message={message.text} />
-        ))}
-        <MessageSent />
+        <Footer
+          messageRef={messageRef}
+          SetMessageList={SetMessageList}
+          socket={socket}
+        />
       </div>
-      <Footer
-        messageRef={messageRef}
-        SetMessageList={SetMessageList}
-        socket={socket}
-      />
-    </div>
+    </>
   );
 }
