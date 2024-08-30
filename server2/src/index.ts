@@ -9,9 +9,9 @@ require("dotenv").config();
 async function initialize() {
   try {
     await AppDataSource.initialize();
-    console.log("Data Source has been initialized!");
+    console.log("Data Source foi inicializado!");
   } catch (error) {
-    console.error("Error during Data Source initialization:", error);
+    console.error("Error durante a inicialização do Data Source:", error);
   }
 }
 
@@ -25,7 +25,7 @@ app.use(
 );
 
 const server = app.listen(3002, () => {
-  console.log("Server Running");
+  console.log("Servidor Rodando.");
 });
 
 export const io = require("socket.io")(server, {

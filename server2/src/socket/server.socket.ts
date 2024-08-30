@@ -1,23 +1,31 @@
 import { io } from "../index";
+import { AppDataSource } from "../database/db";
+import { Socket } from "socket.io";
 
-export const active_users = Array();
+interface MessageData {
+  userSent: string;
+  userReceived: string;
+  message: string;
+}
+
 export function Socket_server() {
-  io.on("connection", (client: any) => {
-    console.log("connect to socket", client.id);
+  io.on("connection", (client: Socket) => {
+    console.log("Connectado ao socket", client.id);
 
-    client.on("connect user", (data: any) => {
-      let obj = {
-        user_id: data.id,
-        socket_id: client.id,
-      };
-
-      active_users.push(obj);
-
-      console.log(active_users);
+    client.on("send_message", async (data: MessageData) => {
+      try {
+        await AppDataSource.query(
+          "INSERT INTO messages (userSent, userReceived, message) VALUES ($1, $2, $3)",
+          [data.userSent, data.userReceived, data.message]
+        );
+        console.log("Mensagem Salva no Banco de Dados.", data);
+      } catch (error) {
+        console.error("Erro ao salvar a mensagem no Banco de Dados.", error);
+      }
     });
 
     client.on("disconnect", () => {
-      console.log("disconnect to socket", client.id);
+      console.log("Desconectado do socket", client.id);
     });
   });
 }
