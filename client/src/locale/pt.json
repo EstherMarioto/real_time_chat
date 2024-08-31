@@ -10,7 +10,10 @@
         "username": "Nome de Usuário",
         "toEnter": "Entrar",
         "today": "Hoje",
-        "typeHere": "Digite aqui..."
+        "typeHere": "Digite aqui...",
+        "changeToPortuguese":"Mudar para Português",
+        "changeToEnglish": "Mudar para Inglês",
+        "send": "Enviar"
 
     }
 }
